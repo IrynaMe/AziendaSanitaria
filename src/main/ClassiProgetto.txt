@@ -1,0 +1,50 @@
+Medico
+	-nome
+	-cognome
+	-tesseraSanitaria (TesseraSanitaria)
+
+Paziente
+	-nome
+	-cognome
+	-tesseraSanitaria (TesseraSanitaria)
+	-Medico (Medico)
+
+
+
+TesseraSanitaria
+	-codiceZona (int) [prime dieci]
+	-codicePersona (int) [secode dieci]
+
+-------------------
+get & set
+
+
+Utilita
+
+-------------
+ +controlloUnicita [boolean]
+
+
+AziendaSanitaria [GestioneDb]
+	-creazioneDb
+	-TabellaMedici
+		|id [primary key]
+		|nome
+		|cognome
+		|tesseraSanitaria [unique]
+
+	-TabellaPazienti
+		|id
+		|nome
+		|cognome
+		|tesseraSanitaria [primary key]
+		|Medico (id Medico) [external key]
+
+---------------------------
+aggPaziente [paziente in arrayList]
+cancellaPaziente [elimina il paziente]
+cambioMedicoPaziente
+aggMedico (Medico)
+sostituzioneMedico (Medico) [modifica Medico]
+listaMedico [pazienti di un medico dato in input]
+statMedico [medico con il maggior numero di pazienti]
